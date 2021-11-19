@@ -1,0 +1,35 @@
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+<style>@import url("https://fonts.googleapis.com/css2?family=Roboto")
+body:{font-family: 'Roboto', sans-serif;}</style>
+<script type = "text/javascript">
+	function main(){
+		let input = document.getElementById("input").value
+		let output = document.getElementById("output")
+		console.log(input)
+		let a1 = input.substring(input.indexOf("'"),0)
+		let a2 = parseInt(input.substring(input.indexOf("'")+1,input.indexOf("'")+2), 30)
+		let s = input.substring(input.indexOf("'")+2,input.indexOf("'")+3)
+
+		input = input.slice(input.indexOf("'")+3)
+		let b1 = input.substring(input.indexOf("'"),0)
+		let b2 = parseInt(input.substring(input.indexOf("'")+1,input.indexOf("'")+2), 30)
+		let o = input.substring(input.indexOf("=")+1)
+		let x = (eval(String(parseInt(a1, a2))+s+String(parseInt(b1, b2)))).toString(Number(o))
+		output.innerHTML=""
+
+		output.innerHTML = x
+		console.log(input)
+		
+	}
+
+</script>
+</head>
+<body>
+<input id = "input" placeholder = "Input" style="font-family: 'Roboto', sans-serif;">
+<button OnClick = "main();" style = "font-family: 'Roboto', sans-serif;">Run</button>
+<br><br>
+<a id = "output" style = "font-family: 'Roboto', sans-serif;">Output</a>
+</body>
